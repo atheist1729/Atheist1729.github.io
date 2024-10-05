@@ -2,143 +2,80 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', sans-serif; /* Use a techy font */
   background-color: #1e1e1e; /* Dracula dark background */
   color: #f8f8f2; /* Dracula light text */
 }
 
+h1, h2 {
+  font-family: 'Orbitron', sans-serif; /* Techy font for headings */
+}
+
 a {
   color: #50fa7b; /* Neon green links */
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: none;
-}
-
-nav {
-  background-color: #282a36;
-  padding: 10px;
-  text-align: center;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a:hover {
-  color: #ff79c6; /* Neon pink hover */
-}
-
-/* Home Section */
-#home {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.container {
-  max-width: 1200px;
-  padding: 20px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #ff79c6; /* Neon Pink */
-}
-
-h2 {
-  font-size: 36px;
-  color: #8be9fd; /* Neon Blue */
-  margin-top: 40px;
-}
-
-/* Questions Section */
-#questions {
-  background-color: #282a36;
-  padding: 50px 0;
-  text-align: center;
-}
-
-#questions h2 {
-  font-size: 36px;
-  color: #ffb86c;
-}
-
-#questions p {
-  font-size: 20px;
-  color: #f8f8f2;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-/* Call to Action */
-#cta {
-  background-color: #44475a;
-  text-align: center;
-  padding: 50px 0;
-}
-
-#cta h2 {
-  font-size: 32px;
-  color: #ff79c6;
-}
-
-#cta p {
-  font-size: 18px;
-  color: #f8f8f2;
 }
 
 .btn {
-  background-color: #ff79c6;
+  background: linear-gradient(45deg, #ff79c6, #bd93f9); /* Gradient button */
   color: white;
   padding: 12px 24px;
   border: none;
+  border-radius: 5px; /* Rounded corners */
   font-size: 18px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   display: inline-block;
   margin-top: 20px;
 }
 
 .btn:hover {
-  background-color: #bd93f9;
+  transform: translateY(-3px); /* Lift effect on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 36px;
-  }
-
-  h2 {
-    font-size: 28px;
-  }
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('../images/hero-background.jpg'); /* Add hero image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 28px;
-  }
+.hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.6); /* Dark overlay */
+}
 
-  h2 {
-    font-size: 24px;
-  }
+/* Image Section */
+#features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
 
-  .btn {
-    font-size: 16px;
-  }
+.feature {
+  flex-basis: 30%;
+  background-color: #44475a;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: scale(1.05); /* Grow effect on hover */
+}
+
+.feature img {
+  max-width: 100px; /* Techy icons for each feature */
 }
