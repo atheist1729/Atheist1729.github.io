@@ -2,9 +2,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto Mono', monospace;
-  background-color: #1e1e1e; /* Dracula dark background */
-  color: #f8f8f2; /* Dracula light text */
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  background-color: #1e1e1e; /* Dark background */
+  color: #f8f8f2; /* Light text color */
 }
 
 a {
@@ -17,9 +17,10 @@ ul {
 }
 
 nav {
-  background-color: #282a36;
-  padding: 10px;
+  background-color: #282a36; /* Dark navigation background */
+  padding: 15px;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
 nav ul {
@@ -29,116 +30,133 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a:hover {
-  color: #ff79c6; /* Neon pink hover */
+  color: #ff79c6; /* Bright pink on hover */
 }
 
-/* Home Section */
-#home {
-  height: 100vh;
+/* Hero Section */
+.hero {
+  height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url('../images/background.jpg');
+  background-image: url('../images/hero-background.jpg'); /* Background image */
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+.hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.6); /* Dark overlay */
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1200px; /* Maximum width */
   padding: 20px;
   margin: auto;
+  position: relative;
+  z-index: 1; /* Ensure text is above the overlay */
 }
 
 h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  color: #ff79c6; /* Neon Pink */
+  color: #ff79c6; /* Bright pink */
 }
 
 h2 {
   font-size: 36px;
-  color: #8be9fd; /* Neon Blue */
+  color: #8be9fd; /* Neon blue */
   margin-top: 40px;
 }
 
 /* Questions Section */
 #questions {
-  background-color: #282a36;
-  padding: 50px 0;
+  padding: 50px 20px; /* Padding */
   text-align: center;
+  background-color: #44475a; /* Section background */
 }
 
 #questions h2 {
   font-size: 36px;
-  color: #ffb86c;
+  color: #ffb86c; /* Bright yellow */
 }
 
 #questions p {
   font-size: 20px;
-  color: #f8f8f2;
-  font-weight: bold;
-  margin: 20px 0;
+  margin: 10px 0; /* Space between questions */
 }
 
 /* Call to Action */
 #cta {
-  background-color: #44475a;
+  background-color: #282a36; /* Dark section */
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 #cta h2 {
   font-size: 32px;
-  color: #ff79c6;
+  color: #ff79c6; /* Bright pink */
 }
 
 #cta p {
   font-size: 18px;
-  color: #f8f8f2;
 }
 
+/* Button Styling */
 .btn {
-  background-color: #ff79c6;
+  background-color: #50fa7b; /* Bright green */
   color: white;
   padding: 12px 24px;
   border: none;
+  border-radius: 5px; /* Rounded corners */
   font-size: 18px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   display: inline-block;
   margin-top: 20px;
 }
 
 .btn:hover {
-  background-color: #bd93f9;
+  background-color: #40c057; /* Darker green on hover */
+  transform: translateY(-2px); /* Lift effect */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   h1 {
-    font-size: 36px;
+    font-size: 36px; /* Responsive heading size */
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 28px; /* Responsive subheading size */
+  }
+
+  .btn {
+    font-size: 16px; /* Responsive button size */
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 28px;
+    font-size: 28px; /* Smaller heading size for mobile */
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 24px; /* Smaller subheading size for mobile */
   }
 
-  .btn {
-    font-size: 16px;
+  #questions h2 {
+    font-size: 28px; /* Adjust question heading size */
   }
 }
