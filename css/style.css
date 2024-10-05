@@ -2,9 +2,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif; /* Clean, modern font */
-  background-color: #1e1e1e; /* Dark background */
-  color: #f8f8f2; /* Light text color */
+  font-family: 'Roboto Mono', monospace;
+  background-color: #1e1e1e; /* Dracula dark background */
+  color: #f8f8f2; /* Dracula light text */
 }
 
 a {
@@ -17,10 +17,9 @@ ul {
 }
 
 nav {
-  background-color: #282a36; /* Darker navigation background */
-  padding: 15px;
+  background-color: #282a36;
+  padding: 10px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 nav ul {
@@ -30,106 +29,93 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 nav ul li a:hover {
-  color: #ff79c6; /* Bright pink on hover */
+  color: #ff79c6; /* Neon pink hover */
 }
 
-/* Hero Section */
-.hero {
-  height: 100vh; /* Full viewport height */
+/* Home Section */
+#home {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url('../images/hero-background.jpg'); /* Add a background image */
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
-  position: relative;
-}
-
-.hero:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(30, 30, 30, 0.6); /* Dark overlay for text readability */
 }
 
 .container {
-  max-width: 1200px; /* Maximum width for content */
+  max-width: 1200px;
   padding: 20px;
   margin: auto;
-  position: relative;
-  z-index: 1; /* Ensure text is above the background overlay */
 }
 
 h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  color: #ff79c6; /* Bright pink for main heading */
+  color: #ff79c6; /* Neon Pink */
 }
 
 h2 {
   font-size: 36px;
-  color: #8be9fd; /* Neon blue for subheadings */
+  color: #8be9fd; /* Neon Blue */
   margin-top: 40px;
 }
 
 /* Questions Section */
 #questions {
-  padding: 50px 20px; /* Top and bottom padding */
+  background-color: #282a36;
+  padding: 50px 0;
   text-align: center;
-  background-color: #44475a; /* Light dark section for contrast */
 }
 
 #questions h2 {
   font-size: 36px;
-  color: #ffb86c; /* Bright yellow for question section heading */
+  color: #ffb86c;
 }
 
 #questions p {
   font-size: 20px;
-  margin: 10px 0; /* Space between questions */
+  color: #f8f8f2;
+  font-weight: bold;
+  margin: 20px 0;
 }
 
 /* Call to Action */
 #cta {
-  background-color: #282a36; /* Dark section for call to action */
+  background-color: #44475a;
   text-align: center;
-  padding: 50px 20px;
+  padding: 50px 0;
 }
 
 #cta h2 {
   font-size: 32px;
-  color: #ff79c6; /* Bright pink for call to action heading */
+  color: #ff79c6;
 }
 
 #cta p {
   font-size: 18px;
+  color: #f8f8f2;
 }
 
-/* Button Styling */
 .btn {
-  background-color: #50fa7b; /* Bright green for buttons */
+  background-color: #ff79c6;
   color: white;
   padding: 12px 24px;
   border: none;
-  border-radius: 5px; /* Rounded corners */
   font-size: 18px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
   display: inline-block;
   margin-top: 20px;
 }
 
 .btn:hover {
-  background-color: #40c057; /* Darker green on hover */
-  transform: translateY(-2px); /* Lift effect */
+  background-color: #bd93f9;
 }
 
 /* Responsive Design */
@@ -140,10 +126,6 @@ h2 {
 
   h2 {
     font-size: 28px;
-  }
-
-  .btn {
-    font-size: 16px;
   }
 }
 
@@ -156,7 +138,7 @@ h2 {
     font-size: 24px;
   }
 
-  #questions h2 {
-    font-size: 28px;
+  .btn {
+    font-size: 16px;
   }
 }
