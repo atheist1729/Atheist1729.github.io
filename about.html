@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
   </nav>
 
   <!-- Main Content Section -->
-  <div class="content scroll-animate" id="about">
+  <div class="content" id="about"> <!-- Removed scroll-animate class -->
     <h1>About Us</h1>
     <p>We are Vansh and Abhinav Mishra, Class 9 CBSE students who are passionate about creating meaningful change in the Indian education system.</p>
     <p>Our goal is to encourage creativity, mental well-being, and future-ready skills in the education system, and we are gathering insights from across the nation to push for reforms.</p>
@@ -38,17 +38,6 @@
     // Preloader removal
     window.addEventListener('load', function() {
       document.getElementById('preloader').style.display = 'none';
-    });
-
-    // Scroll-triggered animations
-    window.addEventListener('scroll', function() {
-      var elements = document.querySelectorAll('.scroll-animate');
-      elements.forEach(function(el) {
-        var position = el.getBoundingClientRect().top;
-        if (position < window.innerHeight) {
-          el.classList.add('visible');
-        }
-      });
     });
   </script>
 
