@@ -3,52 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shape the Future of Indian Education</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>National Education Reform Survey</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #00ffcc;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: #252525;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: #ff0066;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      background-color: #1e1e1e;
+    }
+
+    .animation-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 3em;
+      color: #00ffcc;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards, typing 4s steps(18) 1s forwards;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid rgba(0, 255, 204, 0.75);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .cta-button {
+      background-color: #00ffcc;
+      color: #1e1e1e;
+      padding: 15px 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #ff0066;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
+    }
+
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #252525;
+      color: #fff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+      }
+
+      nav {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      nav a {
+        padding: 10px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      .cta-button {
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="our-aim.html">Our Aim</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
 
-  <!-- Hero Section with Background -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h1>Shape the Future of Indian Education</h1>
-      <p>We are conducting a national survey to gather insights from students, educators, and citizens across India to bring meaningful reforms to the Indian education system. <strong>No data has been collected yet as the survey is still in process.</strong> We aim to get at least 1 lakh responses to ensure the survey’s impact is significant.</p>
-      <p>Your participation is crucial. The more people join us, the stronger our voice will be in shaping the education system.</p>
-      <a href="https://forms.gle/FJvXp2N5EpNrhCoK8" class="btn">Take the Survey</a>
-    </div>
-  </section>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#aim">Our Aim</a>
+  </nav>
 
-  <!-- Motivational Questions Section -->
-  <section id="questions">
-    <div class="container">
-      <h2>Thought-Provoking Questions</h2>
-      <p><strong>When will India be as developed as foreign countries?</strong></p>
-      <p><strong>When will our education system encourage creativity over memorization?</strong></p>
-      <p><strong>When will India become fully secular, without riots in the name of religion?</strong></p>
-      <p>By participating in this survey, you help us find the answers to these questions and work toward a better future for all.</p>
+  <!-- Hero Section with Animation -->
+  <div class="hero" id="home">
+    <div class="animation-container">
+      <h2>Every Voice Matters</h2>
     </div>
-  </section>
+    <button class="cta-button" onclick="window.location.href='https://forms.gle/FJvXp2N5EpNrhCoK8'">Take the Survey</button>
+  </div>
 
-  <!-- Call to Action -->
-  <section id="cta">
-    <div class="container">
-      <h2>Join the Movement for Educational Reform</h2>
-      <p>We need your insights to make this survey impactful. Help us reach 1 lakh responses to create meaningful change in the education system. Your voice can make a difference.</p>
-      <a href="https://forms.gle/FJvXp2N5EpNrhCoK8" class="btn">Take the Survey Now</a>
-    </div>
-  </section>
+  <!-- Main Content Section -->
+  <div class="content scroll-animate" id="about">
+    <h1>National Education Reform Survey</h1>
+    <p>We are conducting a national survey to gather insights from students, educators, and citizens across India to bring meaningful reforms to the Indian education system. <strong>No data has been collected yet as the survey is still in process.</strong> We aim to get at least 1 lakh responses to ensure the survey’s impact is significant.</p>
+    <p>Your participation matters! The more people join us, the stronger our voice will be in shaping the education system.</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2024 National Education Reform Survey
+  </footer>
+
+  <script>
+    // Preloader removal
+    window.addEventListener('load', function() {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // Scroll-triggered animations
+    window.addEventListener('scroll', function() {
+      var elements = document.querySelectorAll('.scroll-animate');
+      elements.forEach(function(el) {
+        var position = el.getBoundingClientRect().top;
+        if (position < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
