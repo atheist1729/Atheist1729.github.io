@@ -154,8 +154,7 @@ h2 {
   color: #f8f8f2;
   font-weight: bold;
 }
-
-/* Scroll Animation */
+/* Additional Animation for Our Aim Content */
 .scroll-animate {
   opacity: 0;
   transform: translateY(20px);
