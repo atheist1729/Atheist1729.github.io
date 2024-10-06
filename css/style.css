@@ -40,7 +40,7 @@ body {
 nav {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 15px 20px; /* Adjusted padding */
   background-color: #252525;
   position: sticky;
   top: 0;
@@ -50,8 +50,9 @@ nav {
 nav a {
   color: #00ffcc;
   text-decoration: none;
-  font-size: 1.2em;
-  letter-spacing: 1px;
+  font-size: 1.1em; /* Slightly reduced font size */
+  padding: 10px; /* Added padding for better click area */
+  transition: color 0.3s; /* Transition for hover effect */
 }
 
 nav a:hover {
@@ -166,11 +167,13 @@ h2 {
   transform: translateY(0);
 }
 
+/* Footer Styles */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px; /* Reduced padding for a more compact footer */
   background-color: #252525;
   color: #fff;
+  font-size: 0.9em; /* Smaller font size for the footer */
 }
 
 html {
