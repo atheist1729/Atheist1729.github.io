@@ -4,184 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>National Education Reform Survey</title>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #1e1e1e;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    /* Preloader */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #1e1e1e;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 5px solid #f3f3f3;
-      border-top: 5px solid #00ffcc;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-around;
-      padding: 20px;
-      background-color: #252525;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-size: 1.2em;
-      letter-spacing: 1px;
-    }
-
-    nav a:hover {
-      color: #ff0066;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 90vh;
-      background-color: #1e1e1e;
-    }
-
-    .animation-container {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 20px 0;
-      letter-spacing: 2px;
-    }
-
-    h2 {
-      font-size: 3em;
-      color: #00ffcc;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards, typing 4s steps(18) 1s forwards;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid rgba(0, 255, 204, 0.75);
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .cta-button {
-      background-color: #00ffcc;
-      color: #1e1e1e;
-      padding: 15px 30px;
-      border: none;
-      cursor: pointer;
-      font-size: 1.2em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #ff0066;
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
-    }
-
-    .content {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .scroll-animate {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .scroll-animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #252525;
-      color: #fff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      .cta-button {
-        padding: 10px 20px;
-        font-size: 1em;
-      }
-
-      nav {
-        flex-direction: column;
-        padding: 10px;
-      }
-
-      nav a {
-        padding: 10px 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5em;
-      }
-
-      h2 {
-        font-size: 2em;
-      }
-
-      .cta-button {
-        font-size: 0.9em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
 
@@ -192,10 +15,11 @@
 
   <!-- Navigation Bar -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact Us</a>
-    <a href="#aim">Our Aim</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="our-aim.html">Our Aim</a>
+    <a href="#questions">Questions</a>
   </nav>
 
   <!-- Hero Section with Animation -->
@@ -213,6 +37,15 @@
     <p>Your participation matters! The more people join us, the stronger our voice will be in shaping the education system.</p>
   </div>
 
+  <!-- Thought-Provoking Questions Section -->
+  <div class="questions-section scroll-animate" id="questions">
+    <h2>Thought-Provoking Questions</h2>
+    <p><strong>When will India be as developed as foreign countries?</strong></p>
+    <p><strong>When will our education system encourage creativity over memorization?</strong></p>
+    <p><strong>When will India become fully secular, without riots in the name of religion?</strong></p>
+    <p><strong>When will Indian students feel empowered to shape their own future?</strong></p>
+  </div>
+
   <!-- Footer Section -->
   <footer>
     &copy; 2024 National Education Reform Survey
@@ -226,7 +59,7 @@
 
     // Scroll-triggered animations
     window.addEventListener('scroll', function() {
-      var elements = document.querySelectorAll('.scroll-animate');
+      var elements = document.querySelectorAll('.scroll-animate, .questions-section');
       elements.forEach(function(el) {
         var position = el.getBoundingClientRect().top;
         if (position < window.innerHeight) {
